@@ -9,8 +9,11 @@ class AppProvider extends ChangeNotifier{
     checkTheme();
   }
 
-
+  //default them on every time app init,
+  //=> we can save and load on startup or
+  //=> we can check and use the system theme
   ThemeData theme = Constants.lightTheme;
+
   Key key = UniqueKey();
   GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 

@@ -1,5 +1,6 @@
 # AzShop-kit Flutter project
 This is a clone of https://github.com/atornel/RestaurantAppUIKit and credit to the author!
+Beautiful prototype but need optimizing much.
 
 # This tip-trick shows off how to rename package for both ios and android in any Flutter project
 
@@ -18,7 +19,7 @@ This is a clone of https://github.com/atornel/RestaurantAppUIKit and credit to t
    
    Credit to the author https://stackoverflow.com/users/11876780/gagan-raghunath 
 
-# 🍔🍔 Restaurant app UI KIT [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+## 🍔🍔 Restaurant app UI KIT [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
 Flutter representation of a full Restaurant app UI KIT.
 
