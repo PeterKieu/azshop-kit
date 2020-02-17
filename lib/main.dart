@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           navigatorKey: appProvider.navigatorKey,
           title: Constants.appName,
-          theme: appProvider.theme,
+          theme: appProvider.theme, //using stored shared preference
           home: SplashScreen(),
         );
       },

@@ -14,9 +14,7 @@ class _WalkthroughState extends State<Walkthrough> {
     List<PageViewModel> pages = [
       PageViewModel(
         "Fresh Food",
-        "Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus."
-            " Vestibulum ac diam sit amet quam vehicula elementum sed sit amet "
-            "dui. Nulla porttitor accumsan tincidunt.",
+        "The art of cooking comes from fresh food",
         image: Image.asset(
           "assets/on1.png",
           height: 175.0,
@@ -38,9 +36,7 @@ class _WalkthroughState extends State<Walkthrough> {
 
       PageViewModel(
         "Fast Delivery",
-        "Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus."
-            " Vestibulum ac diam sit amet quam vehicula elementum sed sit amet "
-            "dui. Nulla porttitor accumsan tincidunt.",
+        "Hot and delicous taste go along with the fast delivery service",
         image: Image.asset(
           "assets/on2.png",
           height: 185.0,
@@ -62,9 +58,7 @@ class _WalkthroughState extends State<Walkthrough> {
 
       PageViewModel(
         "Easy Payment",
-        "Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus."
-            " Vestibulum ac diam sit amet quam vehicula elementum sed sit amet "
-            "dui. Nulla porttitor accumsan tincidunt.",
+        "Customer centric is followed by simple and easy payment medium ",
         image: Image.asset(
           "assets/on3.png",
           height: 175.0,
@@ -103,6 +97,7 @@ class _WalkthroughState extends State<Walkthrough> {
               );
             },
             onSkip: () {
+              //save to remember this action for next run
               Navigator.of(context).push(
                 MaterialPageRoute(
                   builder: (BuildContext context){
