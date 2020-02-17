@@ -4,6 +4,7 @@ import 'package:azshop/providers/app_provider.dart';
 import 'package:azshop/screens/splash.dart';
 import 'package:azshop/util/const.dart';
 
+
 void main() {
   runApp(
     MultiProvider(

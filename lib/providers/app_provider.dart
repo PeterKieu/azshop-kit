@@ -5,6 +5,7 @@ import 'package:azshop/util/const.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class AppProvider extends ChangeNotifier{
+  //constructor checks theme settings in preference and use it
   AppProvider(){
     checkTheme();
   }
@@ -27,6 +28,8 @@ class AppProvider extends ChangeNotifier{
     notifyListeners();
   }
 
+  //this routine save data in Shared preference, and only lost when uninstalling app
+  //and set all UI items into target theme
   void setTheme(value, c) {
     theme = value;
     SharedPreferences.getInstance().then((prefs){
@@ -44,6 +47,7 @@ class AppProvider extends ChangeNotifier{
   ThemeData getTheme(value) {
     return theme;
   }
+
 
   Future<ThemeData> checkTheme() async{
     SharedPreferences prefs = await SharedPreferences.getInstance();
