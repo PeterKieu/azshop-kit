@@ -6,23 +6,16 @@ import 'package:azshop/util/app_settings.dart';
 import 'package:azshop/util/const.dart';
 
 class Walkthrough extends StatefulWidget {
-
   @override
   _WalkthroughState createState() => _WalkthroughState();
 }
 
 class _WalkthroughState extends State<Walkthrough> {
-
-
   final MyAppSettings settings = Constants.settingMap['appsettings'];
-
-
-  bool skip = false;
-
 
   @override
   Widget build(BuildContext context) {
-    //
+    bool skip = settings.skipWalkthrough.getValue();
     if(skip){
       //
       return JoinApp();
