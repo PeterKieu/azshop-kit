@@ -2,13 +2,16 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:azshop/util/const.dart';
-//import 'package:shared_preferences/shared_preferences.dart';
+
+import 'package:azshop/util/app_settings.dart';
 
 class AppProvider extends ChangeNotifier{
   //constructor checks theme settings in preference and use it
+
   AppProvider(){
-//    checkTheme();
+    checkTheme(this.settings);
   }
+  final MyAppSettings settings = Constants.settingMap['appsettings'];
 
   //default them on every time app init,
   //=> we can save and load on startup or
@@ -32,15 +35,13 @@ class AppProvider extends ChangeNotifier{
   //and set all UI items into target theme
   void setTheme(value, c) {
     theme = value;
-//    SharedPreferences.getInstance().then((prefs){
-//      prefs.setString("theme", c).then((val){
-//        SystemChrome.setEnabledSystemUIOverlays(SystemUiOverlay.values);
-//        SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-//          statusBarColor: c == "dark" ? Constants.darkPrimary : Constants.lightPrimary,
-//          statusBarIconBrightness: c == "dark" ? Brightness.light:Brightness.dark,
-//        ));
-//      });
-//    });
+
+    SystemChrome.setEnabledSystemUIOverlays(SystemUiOverlay.values);
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+      statusBarColor: c == "dark" ? Constants.darkPrimary : Constants.lightPrimary,
+      statusBarIconBrightness: c == "dark" ? Brightness.light:Brightness.dark,
+    ));
+
     notifyListeners();
   }
 
@@ -49,20 +50,18 @@ class AppProvider extends ChangeNotifier{
   }
 
 
-//  Future<ThemeData> checkTheme() async{
-//    SharedPreferences prefs = await SharedPreferences.getInstance();
-//    ThemeData t;
-//    String r = prefs.getString("theme") == null ? "light" : prefs.getString(
-//        "theme");
-//
-//    if(r == "light"){
+  void checkTheme(MyAppSettings settings) {
+
+    String r = settings.theme.getValue();
+
+    if(r == "light"){
 //      t = Constants.lightTheme;
-//      setTheme(Constants.lightTheme, "light");
-//    }else{
+      setTheme(Constants.lightTheme, "light");
+    }else{
 //      t = Constants.darkTheme;
-//      setTheme(Constants.darkTheme, "dark");
-//    }
-//
-//    return t;
-//  }
+      setTheme(Constants.darkTheme, "dark");
+    }
+
+
+  }
 }

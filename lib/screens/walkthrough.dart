@@ -3,17 +3,19 @@ import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:azshop/screens/join.dart';
 import 'package:azshop/util/app_settings.dart';
+import 'package:azshop/util/const.dart';
 
 class Walkthrough extends StatefulWidget {
+
   @override
   _WalkthroughState createState() => _WalkthroughState();
 }
 
 class _WalkthroughState extends State<Walkthrough> {
 
-  _WalkthroughState(){
 
-  }
+  final MyAppSettings settings = Constants.settingMap['appsettings'];
+
 
   bool skip = false;
 
@@ -123,7 +125,7 @@ class _WalkthroughState extends State<Walkthrough> {
             child: IntroductionScreen(
               pages: pages,
               onDone: () {
-//                setSkip(true);
+                settings.skipWalkthrough.setValue(true);
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (BuildContext context) {
@@ -133,8 +135,7 @@ class _WalkthroughState extends State<Walkthrough> {
                 );
               },
               onSkip: () {
-                //save to remember this action for next run
-//                setSkip(true);
+                settings.skipWalkthrough.setValue(true);
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (BuildContext context) {

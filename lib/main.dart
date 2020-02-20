@@ -17,6 +17,7 @@ Future<void> main() async {
   final preferences = await StreamingSharedPreferences.instance;
 
   final settings = MyAppSettings(preferences);
+  Constants.settingMap['appsettings']=settings;
 
   //2.
   runApp(
@@ -24,14 +25,14 @@ Future<void> main() async {
       providers: [
         ChangeNotifierProvider(create: (_) => AppProvider()), //manage theme of app
       ],
-      child: MyApp(settings),
+      child: MyApp(),
     ),
   );
 }
 
 class MyApp extends StatelessWidget {
-  MyApp(this.settings);
-  final MyAppSettings settings;
+
+  final MyAppSettings settings = Constants.settingMap['appsettings'];
 
   @override
   Widget build(BuildContext context) {

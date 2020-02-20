@@ -3,17 +3,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:azshop/screens/walkthrough.dart';
 import 'package:azshop/util/const.dart';
-
+import 'package:azshop/util/app_settings.dart';
 
 class SplashScreen extends StatefulWidget {
+
   @override
   _SplashScreenState createState() => _SplashScreenState();
 }
 
 class _SplashScreenState extends State<SplashScreen> {
 
+  final MyAppSettings settings = Constants.settingMap['appsettings'];
+
   startTimeout() {
-    return  Timer(Duration(seconds: 2), changeScreen);
+    return  Timer(Duration(seconds: 1), changeScreen);
   }
 
   changeScreen() async{

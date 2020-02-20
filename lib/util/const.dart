@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 class Constants{
 
   static String appName = "AzShop App UI KIT";
+  //GLOBAL settings map
+  static Map<String, dynamic> settingMap = Map<String, dynamic>();
 
   //Colors for theme
 //  Color(0xfffcfcff);

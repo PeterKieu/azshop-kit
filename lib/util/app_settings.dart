@@ -18,5 +18,6 @@ class MyAppSettings {
   final Preference<String> theme;
 
   //getter/setter by skipWalkthrough.getValue()/skipWalkthrough.setValue(true)
-//synchronize with: preferences.setBool('WalkthroughState', true),
+  //then automatically synchronize with: preferences.setBool('WalkthroughState', true),
+
 }
