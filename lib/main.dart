@@ -7,12 +7,17 @@ import 'dart:async';
 import 'package:streaming_shared_preferences/streaming_shared_preferences.dart';
 import 'package:azshop/util/app_settings.dart';
 
+
+
 Future<void> main() async {
   //1. load/check global parameters
   /// Obtain instance to streaming shared preferences, create MyAppSettings, and
   /// once that's done, run the app.
+  WidgetsFlutterBinding.ensureInitialized();
   final preferences = await StreamingSharedPreferences.instance;
+
   final settings = MyAppSettings(preferences);
+
   //2.
   runApp(
     MultiProvider(

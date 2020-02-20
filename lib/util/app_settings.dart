@@ -16,4 +16,7 @@ class MyAppSettings {
   final Preference<bool> skipWalkthrough;
   final Preference<bool> darkMode;
   final Preference<String> theme;
+
+  //getter/setter by skipWalkthrough.getValue()/skipWalkthrough.setValue(true)
+//synchronize with: preferences.setBool('WalkthroughState', true),
 }
