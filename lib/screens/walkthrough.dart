@@ -2,7 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:azshop/screens/join.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:azshop/util/app_settings.dart';
 
 class Walkthrough extends StatefulWidget {
   @override
@@ -12,30 +12,11 @@ class Walkthrough extends StatefulWidget {
 class _WalkthroughState extends State<Walkthrough> {
 
   _WalkthroughState(){
-    checkSkip();
-  }
-
-  bool skip = false; //for first time running app
-  bool getSkip(){
-    return skip;
-  }
-
-  void setSkip(bool value){
-    this.skip = value;
-    //save in shared preference for future use
-    SharedPreferences.getInstance().then((prefs){
-      prefs.setBool("WalkthroughState", value);
-    });
 
   }
 
+  bool skip = false;
 
-  Future<bool> checkSkip() async{
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    bool value = prefs.getBool("WalkthroughState") == null ? false : prefs.getBool("WalkthroughState");
-    setSkip(value);
-    return value;
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -142,7 +123,7 @@ class _WalkthroughState extends State<Walkthrough> {
             child: IntroductionScreen(
               pages: pages,
               onDone: () {
-                setSkip(true);
+//                setSkip(true);
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (BuildContext context) {
@@ -153,7 +134,7 @@ class _WalkthroughState extends State<Walkthrough> {
               },
               onSkip: () {
                 //save to remember this action for next run
-                setSkip(true);
+//                setSkip(true);
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (BuildContext context) {
