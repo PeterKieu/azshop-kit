@@ -35,33 +35,36 @@ class AppProvider extends ChangeNotifier{
   //and set all UI items into target theme
   void setTheme(value, c) {
     theme = value;
-
-    SystemChrome.setEnabledSystemUIOverlays(SystemUiOverlay.values);
-    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-      statusBarColor: c == "dark" ? Constants.darkPrimary : Constants.lightPrimary,
-      statusBarIconBrightness: c == "dark" ? Brightness.light:Brightness.dark,
-    ));
+    if(c == "dark" ){
+      SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+        statusBarColor:  Constants.darkPrimary ,
+        statusBarIconBrightness:  Brightness.light,
+      ));
+    }else{
+      SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+        statusBarColor: Constants.lightPrimary,
+        statusBarIconBrightness: Brightness.dark,
+      ));
+    }
 
     notifyListeners();
+    this.settings.theme.setValue(c);
   }
 
   ThemeData getTheme(value) {
+    String c = this.settings.theme.getValue();
+    theme = c == "dark"? Constants.darkTheme:Constants.lightTheme;
     return theme;
   }
 
 
   void checkTheme(MyAppSettings settings) {
-
     String r = settings.theme.getValue();
-
     if(r == "light"){
-//      t = Constants.lightTheme;
       setTheme(Constants.lightTheme, "light");
     }else{
-//      t = Constants.darkTheme;
       setTheme(Constants.darkTheme, "dark");
     }
-
 
   }
 }

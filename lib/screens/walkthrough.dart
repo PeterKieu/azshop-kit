@@ -17,7 +17,6 @@ class _WalkthroughState extends State<Walkthrough> {
   Widget build(BuildContext context) {
     bool skip = settings.skipWalkthrough.getValue();
     if(skip){
-      //
       return JoinApp();
     }else {
       //build popup pages

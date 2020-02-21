@@ -9,7 +9,7 @@ import 'package:streaming_shared_preferences/streaming_shared_preferences.dart';
 class MyAppSettings {
   //contructor
   MyAppSettings(StreamingSharedPreferences preferences)
-      : skipWalkthrough = preferences.getBool('WalkthroughState', defaultValue: true),
+      : skipWalkthrough = preferences.getBool('WalkthroughState', defaultValue: false),
         darkMode = preferences.getBool('darkMode', defaultValue: false),
         theme = preferences.getString('theme', defaultValue: 'light');
 
