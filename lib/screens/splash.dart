@@ -13,7 +13,7 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
 
-  final MyAppSettings settings = Constants.settingMap['appsettings'];
+//  final MyAppSettings settings = Constants.settingMap['appsettings'];
 
   startTimeout() {
     return  Timer(Duration(seconds: 1), changeScreen);
