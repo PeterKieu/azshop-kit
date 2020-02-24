@@ -11,11 +11,15 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^0.1.2
   introduction_screen: ^1.0.5+2
-#  shared_preferences: ^0.5.6
+#  BSD licence:
   streaming_shared_preferences: ^1.0.1
   font_awesome_flutter: ^8.5.0
   carousel_slider: ^1.4.1
   provider: ^4.0.1
+  logger: ^0.8.3
+  sensors: ^0.4.1+8
+  share: ^0.6.3+6
+  rxdart: ^0.23.1
 
 
 dev_dependencies:
