@@ -153,6 +153,9 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
               onPressed: (){
+                //processing Authen verification to Backend server (+ firebase admin sdk)
+                //if wrong show message, and retry
+                //if authenticated navigate to main screen, store session token -> App settings
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (BuildContext context){

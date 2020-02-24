@@ -11,6 +11,7 @@ class AppProvider extends ChangeNotifier{
   AppProvider(){
     checkTheme(this.settings);
   }
+  //using Global settings map
   final MyAppSettings settings = Constants.settingMap['appsettings'];
 
   //default them on every time app init,

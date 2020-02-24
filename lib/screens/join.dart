@@ -3,7 +3,7 @@ import 'package:azshop/screens/login.dart';
 import 'package:azshop/screens/register.dart';
 import 'package:flutter/services.dart';
 import 'package:azshop/util/const.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+
 
 
 class JoinApp extends StatefulWidget {
@@ -20,7 +20,7 @@ class _JoinAppState extends State<JoinApp> with SingleTickerProviderStateMixin{
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(vsync: this, initialIndex: 1, length: 2);
+    _tabController = TabController(vsync: this, initialIndex: 0, length: 2);
     SystemChrome.setEnabledSystemUIOverlays(SystemUiOverlay.values);
   }
 
