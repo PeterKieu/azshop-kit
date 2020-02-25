@@ -19,7 +19,7 @@ class _WalkthroughState extends State<Walkthrough> {
     if(skip){
       return JoinApp();
     }else {
-      //build popup pages
+      //build walking through pages
       List<PageViewModel> pages = [
         PageViewModel(
           "Fresh Food",

@@ -17,7 +17,6 @@ Future<void> main() async {
   /// once that's done, run the app.
   WidgetsFlutterBinding.ensureInitialized();
   final preferences = await StreamingSharedPreferences.instance;
-
   final settings = MyAppSettings(preferences);
   Constants.settingMap['appsettings']=settings;
 
@@ -38,7 +37,7 @@ class MyApp extends StatelessWidget {
   BlocSensor _sensor;
 
   void showDebugger(){
-    showDialog((context) => DebuggerListView());
+    //showDialog((context) => DebuggerListView());
   }
 
   void setDebugMode(bool enabled){
@@ -57,6 +56,7 @@ class MyApp extends StatelessWidget {
       destroyBelog();
     }
   }
+
 
   @override
   Widget build(BuildContext context) {

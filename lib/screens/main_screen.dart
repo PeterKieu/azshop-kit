@@ -8,7 +8,7 @@ import 'package:azshop/screens/profile.dart';
 import 'package:azshop/screens/search.dart';
 import 'package:azshop/util/const.dart';
 import 'package:azshop/widgets/badge.dart';
-
+import 'package:logger/logger.dart';
 
 class MainScreen extends StatefulWidget {
   @override
@@ -24,6 +24,7 @@ class _MainScreenState extends State<MainScreen> {
     return WillPopScope(
       onWillPop: ()=>Future.value(false),
       child: Scaffold(
+      //top bar: Left: slide menu ; right: Cart & Notification
         appBar: AppBar(
           automaticallyImplyLeading: false,
           centerTitle: true,
