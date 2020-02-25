@@ -81,7 +81,7 @@ class _MainScreenState extends State<MainScreen> {
                     : Theme
                     .of(context)
                     .textTheme.caption.color,
-                onPressed: ()=>_pageController.jumpToPage(0),
+                onPressed: ()=>_pageController.jumpToPage(0)// go to Home widget
               ),
 
               IconButton(
