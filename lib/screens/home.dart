@@ -7,6 +7,8 @@ import 'package:azshop/util/foods.dart';
 import 'package:azshop/util/categories.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
+//Main business flow starting here
+//Show all items
 
 class Home extends StatefulWidget {
   @override
@@ -39,6 +41,7 @@ class _HomeState extends State<Home> with AutomaticKeepAliveClientMixin<Home>{
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
+                //1. first group
                 Text(
                   "Dishes",
                   style: TextStyle(
@@ -60,7 +63,7 @@ class _HomeState extends State<Home> with AutomaticKeepAliveClientMixin<Home>{
                     Navigator.of(context).push(
                       MaterialPageRoute(
                         builder: (BuildContext context){
-                          return DishesScreen();
+                          return DishesScreen(); //goto list of common dishes screen
                         },
                       ),
                     );
@@ -99,7 +102,7 @@ class _HomeState extends State<Home> with AutomaticKeepAliveClientMixin<Home>{
               },
             ),
             SizedBox(height: 20.0),
-
+            //2. second group
             Text(
               "Food Categories",
               style: TextStyle(

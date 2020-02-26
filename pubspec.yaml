@@ -20,6 +20,8 @@ dependencies:
 #  sensors: ^0.4.1+8
 #  share: ^0.6.3+6
 #  rxdart: ^0.23.1
+  flare_flutter: ^2.0.1
+  flare_dart: ^2.2.5
 
 
 dev_dependencies:

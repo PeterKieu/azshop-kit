@@ -4,12 +4,12 @@ import 'dart:async';
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:selectable_circle/selectable_circle.dart';
-import 'package:selectable_circle_list/selectable_circle_item.dart';
+import  'selectable_circle.dart';
+import 'selectable_circle_item.dart';
 
 import 'package:after_layout/after_layout.dart';
 
-export 'package:selectable_circle_list/selectable_circle_item.dart';
+//export 'package:selectable_circle_list/selectable_circle_item.dart';
 
 /// Widget that displays selectable Circles in a row
 ///
